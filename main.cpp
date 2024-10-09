@@ -32,7 +32,7 @@ public:
     void push_back(int value)
     {
         Node* newNode = new Node(value);
-        if (!tail) // if there's no tail, the list is empty
+        if (!tail) // if no tail, the list is empty
             head = tail = newNode;
         else
         {
@@ -44,7 +44,7 @@ public:
     void push_front(int value)
     {
        Node* newNode = new Node(value);
-        if (!head) // if there's no head, the list is empty
+        if (!head) // if no head, list is empty
             head = tail = newNode;
         else
         {
@@ -80,7 +80,7 @@ public:
         if (temp->next)
             temp->next->prev = newNode;
         else
-            tail = newNode; // Inserting at the end
+            tail = newNode; // Insert at the end
         temp->next = newNode;
     }
 
@@ -109,7 +109,7 @@ public:
         }
         else
         {
-            tail = temp->prev; // Deleting the tail
+            tail = temp->prev; // Deleting tail
         }
         delete temp;
     }
@@ -118,7 +118,7 @@ public:
     void delete_pos(int position)
     {
         if (!head || position < 0)
-            return; // Empty list or invalid position
+            return; // Empty list / invalid position
         
         Node* temp = head;
         for (int i = 0; i < position && temp; i++)
@@ -147,7 +147,7 @@ public:
         }
     }
 
-    // New Method to delete head node
+    // New Method delete head node
     void pop_front()
     {
         if (!head) 
@@ -165,7 +165,7 @@ public:
         }
     }
 
-    //New Method to delete tail node
+    //New Method delete tail node
     void pop_back(){
         if (!tail)
             return; // Empty list
